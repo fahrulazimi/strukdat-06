@@ -144,11 +144,11 @@ void traversalIndexContact(ListIn First){
     cout << "Traversal Index Contact" << endl;
     pBantuIn = First;
     while (pBantuIn != NULL)
-    { //loop Divisi
+    { //loop Index
         cout << pBantuIn->index <<endl;
         pBantuCon = pBantuIn->nextContact;
         while (pBantuCon != NULL)
-        { //loop Karyawan
+        { //loop Contact
             cout << " " << pBantuCon->nama << " : " << pBantuCon->phone <<endl;
             pBantuCon = pBantuCon->next;
         }
