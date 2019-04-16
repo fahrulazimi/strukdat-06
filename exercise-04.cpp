@@ -54,13 +54,17 @@ void traversalIn(ListIn First){
 	}
 }
 
-void insertFirstIn(ListIn& First, pointerIn pBaru){
+void insertLastIn(ListIn& First, pointerIn pBaru){
+	pointer last;
 	if (First==NULL){
 		First=pBaru;
-	}	
+	}
 	else {
-		pBaru->next=First;
-		First=pBaru;
+		last=First;
+		while (last->next!=NULL){
+			last=last->next;
+		}
+		last->next=pBaru;
 	}
 }
 
@@ -166,10 +170,10 @@ int main()
 	createListIn(a);
 		do{
 		cout << "Menu" <<endl;
-		cout << "1.  Insert First Index" <<endl;
-		cout << "2.  Insert First/Update Contact" <<endl;
-		cout << "3.  Delete First Index" <<endl;
-		cout << "4.  Delete First Contact" <<endl;
+		cout << "1.  Insert Index" <<endl;
+		cout << "2.  Insert/Update Contact" <<endl;
+		cout << "3.  Delete Index" <<endl;
+		cout << "4.  Delete Contact" <<endl;
 		cout << "5.  Traversal Index" <<endl;
 		cout << "6.  Traversal Index Contact" <<endl;	
 		cout << "7.  Exit" <<endl;
@@ -178,7 +182,7 @@ int main()
 			case 1 :
 			system("cls");
 			createElementIn(p);
-			insertFirstIn(a,p);
+			insertLastIn(a,p);
 			break;
 			case 2 :
 			system("cls");
